@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário de ONG</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página Inicial - Reabilite-se</title>
+  <meta name="description" content="ONG Reabilite-se: resgate, reabilitação e adoção de cães e gatos. Conheça nossa missão, visão, valores e como entrar em contato." />
 </head>
 <body>
-    <header>
-        <h1>Página Inicial</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Página Inicial</a></li>
-                <li><a href="projetos.html">Nossos Projetos</a></li>
-                <li><a href="cadastro.html">Cadastre seu projeto</a></li>          
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Quem somos</h2>
-            <p>Somos a  Reabilite-se, Organização não Governamental dedicada a ajudar animais abandonados, oferecendo abrigo, cuidados médicos e buscando lares amorosos para eles.</p>
-            <img src = "imagens/voluntario.jpg" alt="Voluntários em ação">
-        </section>
+  <header>
+    <h1>Reabilite-se</h1>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Página Inicial</a></li>
+        <li><a href="projetos.html">Nossos Projetos</a></li>
+        <li><a href="cadastro.html">Cadastre seu projeto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section>
-            <h2>Nossa Missão</h2>
-            <p>Nosso missão é resgatar e reabilitar cães e gatos abandonados na cidade, promovendo campanhas de adoção e conscientização sobre a importância do cuidado animal.</p>
-            <img src = "imagens/resgatados.jpg" alt="Animais resgatados">
-        </section>
-        <section>
-            <h2>Visão</h2>
-            <p>Ser referência nacional em proteção animal, expandindo nossas ações para alcançar mais animais necessitados e educar a comunidade sobre o respeito aos direitos dos animais.</p>
-        </section>        
-        <section>
-            <h2>Nossos Valores</h2>
-            <ul>
-                <li>Compromisso com o bem-estar animal</li>
-                <li>Transparência em nossas ações</li>
-                <li>Respeito e amor pelos animais</li>
-                <li>Trabalho voluntário e comunitário</li>
-                <img src = "imagens/adocao.jpg" alt="Respeito e amor pelos animais">
-        </section>
+  <main>
+    <section aria-labelledby="titulo-quem-somos">
+      <h2 id="titulo-quem-somos">Quem somos</h2>
+      <p>Somos a Reabilite-se, uma organização não governamental dedicada a ajudar animais abandonados, oferecendo abrigo, cuidados médicos e buscando lares amorosos para eles.</p>
+      <figure>
+        <img src="imagens/voluntario.jpg" alt="Grupo de voluntários da ONG em ação durante um mutirão" />
+        <figcaption>Voluntários em ação nos mutirões de cuidado animal.</figcaption>
+      </figure>
+    </section>
 
-        <section>
-            <h2>Contato com a ONG</h2>
-            <address>
-                <p>Endereço: Rua dos Animais, 456 - Bairro Esperança, Brasília - DF</p>
-                <p>Telefone: (61) 99876-4321</p>
-                <p>Email: contato@reabilite-se.org.br</p>
-                <img src = "imagens/contato.jpg" alt="Contato com a ONG">
-            </address>
-    </main>
+    <section aria-labelledby="titulo-missao">
+      <h2 id="titulo-missao">Nossa Missão</h2>
+      <p>Resgatar e reabilitar cães e gatos abandonados na cidade, promovendo campanhas de adoção e conscientização sobre a importância do cuidado animal.</p>
+      <figure>
+        <img src="imagens/resgatados.jpg" alt="Animais resgatados recebendo cuidados" />
+        <figcaption>Animais resgatados e em reabilitação.</figcaption>
+      </figure>
+    </section>
 
-    
-    <footer>
-        <p>&copy; 2025 ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
-        <img src = "imagens/marca.png" >
+    <section aria-labelledby="titulo-visao">
+      <h2 id="titulo-visao">Visão</h2>
+      <p>Ser referência nacional em proteção animal, expandindo nossas ações para alcançar mais animais necessitados e educar a comunidade sobre o respeito aos direitos dos animais.</p>
+    </section>
+
+    <section aria-labelledby="titulo-valores">
+      <h2 id="titulo-valores">Nossos Valores</h2>
+      <ul>
+        <li>Compromisso com o bem-estar animal</li>
+        <li>Transparência em nossas ações</li>
+        <li>Respeito e amor pelos animais</li>
+        <li>Trabalho voluntário e comunitário</li>
+      </ul>
+      <figure>
+        <img src="imagens/adocao.jpg" alt="Adoção responsável de um cão por uma família" />
+        <figcaption>Respeito, amor e adoção responsável.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Contato com a ONG</h2>
+      <address>
+        <p>Endereço: Rua dos Animais, 456 – Bairro Esperança, Brasília – DF</p>
+        <p>Telefone: <a href="tel:+5561998764321">(61) 99876-4321</a></p>
+        <p>E-mail: <a href="mailto:contato@reabilite-se.org.br">contato@reabilite-se.org.br</a></p>
+      </address>
+      <figure>
+        <img src="imagens/contato.jpg" alt="Equipe da ONG atendendo ao público" />
+        <figcaption>Fale com nossa equipe para adotar ou apoiar.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
+    <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" />
+  </footer>
 </body>
 </html>
