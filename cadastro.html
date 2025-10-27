@@ -5,21 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro de Projetos – Reabilite-se</title>
   <meta name="description" content="Formulário para cadastrar projetos sociais na ONG Reabilite-se. Preencha seus dados, endereço e detalhes do projeto." />
+
+  <!-- CSS do Design System -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-  <header>
-    <h1>Cadastro de Projetos</h1>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-        <li><a href="projetos.html">Nossos Projetos</a></li>
-        <li><a href="cadastro.html" aria-current="page">Cadastre seu projeto</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a href="index.html" class="brand">
+        <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" class="logo" />
+        <div class="brand-text">
+          <span class="brand-title">Reabilite-se</span>
+          <span class="brand-subtitle">ONG de Proteção Animal</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="nav">
+        <ul class="menu">
+          <li class="menu-item"><a href="index.html">Página Inicial</a></li>
+          <li class="menu-item has-dropdown">
+            <a href="projetos.html" aria-haspopup="true" aria-expanded="false">Projetos</a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="projetos.html#andamento">Em andamento</a></li>
+              <li><a href="projetos.html#como-apoiar">Como apoiar</a></li>
+              <li><a href="projetos.html#como-doar">Como doar</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="cadastro.html" aria-current="page">Cadastre seu projeto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section aria-labelledby="titulo-form">
+  <main class="main-content">
+    <section class="container section" aria-labelledby="titulo-form">
       <h2 id="titulo-form">Formulário de Cadastro de Projeto</h2>
       <p>Preencha os campos abaixo para submeter um projeto. Campos marcados com * são obrigatórios.</p>
 
@@ -126,10 +154,13 @@
           <input type="number" id="orcamento" name="orcamento" required min="0" step="0.01" inputmode="decimal" />
         </fieldset>
 
-        <button type="submit">Enviar Cadastro</button>
+        <div class="mt-16">
+          <button type="submit" class="btn btn-primary">Enviar Cadastro</button>
+          <a href="index.html" class="btn btn-outline">Voltar para a página inicial</a>
+        </div>
       </form>
 
-      <figure>
+      <figure class="mt-24">
         <img src="imagens/cadastro.jpg" alt="Pessoa preenchendo formulário de cadastro no computador" />
         <figcaption>Cadastre seu projeto e ajude nossa rede de apoio animal.</figcaption>
       </figure>
@@ -137,14 +168,17 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
-    <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" />
+    <div class="container">
+      <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
+      <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" />
+    </div>
   </footer>
 
+  <!-- Script: máscaras e navegação mobile -->
   <script>
     // Máscara CPF
     const cpf = document.getElementById('cpf');
-    cpf.addEventListener('input', function () {
+    cpf?.addEventListener('input', function () {
       let v = cpf.value.replace(/\D/g, '');
       v = v.replace(/(\d{3})(\d)/, '$1.$2');
       v = v.replace(/(\d{3})(\d)/, '$1.$2');
@@ -154,19 +188,43 @@
 
     // Máscara telefone
     const telefone = document.getElementById('telefone');
-    telefone.addEventListener('input', function () {
+    telefone?.addEventListener('input', function () {
       let v = telefone.value.replace(/\D/g, '');
-      v = v.replace(/^(\d{2})(\d)/g, '($1) $2');
+      v = v.replace(/^(\d{2})(\d)/, '($1) $2');
       v = v.replace(/(\d{4,5})(\d{4})$/, '$1-$2');
       telefone.value = v;
     });
 
     // Máscara CEP
     const cep = document.getElementById('cep');
-    cep.addEventListener('input', function () {
+    cep?.addEventListener('input', function () {
       let v = cep.value.replace(/\D/g, '');
       v = v.replace(/^(\d{5})(\d)/, '$1-$2');
       cep.value = v;
+    });
+
+    // Menu mobile e dropdown
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#primary-nav');
+    const dropdownTriggers = document.querySelectorAll('.has-dropdown > a');
+
+    toggle?.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('is-open');
+    });
+
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        const parent = trigger.parentElement;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          trigger.setAttribute('aria-expanded', String(!expanded));
+          parent.classList.toggle('open');
+        }
+      });
     });
   </script>
 </body>

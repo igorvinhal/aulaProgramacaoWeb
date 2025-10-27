@@ -5,68 +5,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projetos – Reabilite-se</title>
   <meta name="description" content="Conheça os projetos em andamento da ONG Reabilite-se, como apoiar com voluntariado e como doar para ajudar cães e gatos resgatados." />
+
+  <!-- CSS do Design System -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/utilities.css" />
+  <link rel="stylesheet" href="css/app.css" />
 </head>
 <body>
-  <header>
-    <h1>Projetos da ONG</h1>
-    <nav aria-label="Menu principal">
-      <ul>
-        <li><a href="index.html">Página Inicial</a></li>
-        <li><a href="projetos.html" aria-current="page">Nossos Projetos</a></li>
-        <li><a href="cadastro.html">Cadastre seu projeto</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-bar">
+      <a href="index.html" class="brand">
+        <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" class="logo" />
+        <div class="brand-text">
+          <span class="brand-title">Reabilite-se</span>
+          <span class="brand-subtitle">ONG de Proteção Animal</span>
+        </div>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Abrir menu">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="nav">
+        <ul class="menu">
+          <li class="menu-item"><a href="index.html">Página Inicial</a></li>
+          <li class="menu-item has-dropdown">
+            <a href="projetos.html" aria-haspopup="true" aria-expanded="false" aria-current="page">Projetos</a>
+            <ul class="dropdown" aria-label="submenu">
+              <li><a href="#andamento">Em andamento</a></li>
+              <li><a href="#como-apoiar">Como apoiar</a></li>
+              <li><a href="#como-doar">Como doar</a></li>
+            </ul>
+          </li>
+          <li class="menu-item"><a href="cadastro.html">Cadastre seu projeto</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section aria-labelledby="titulo-andamento">
-      <h2 id="titulo-andamento">Projetos em andamento</h2>
-      <p>Conheça algumas das iniciativas que estão ativas neste momento.</p>
+  <main class="main-content">
+    <section class="container section projects-list" id="andamento" aria-labelledby="titulo-andamento">
+      <h2 id="titulo-andamento" class="section-title">Projetos em andamento</h2>
+      <p class="text-muted mb-24">Conheça algumas das iniciativas que estão ativas neste momento.</p>
 
-      <article>
-        <h3>Mutirão de Castração</h3>
-        <p>Parcerias com clínicas para castração a baixo custo, reduzindo o abandono e promovendo saúde animal.</p>
-      </article>
+      <div class="cards">
+        <article class="card">
+          <img src="imagens/projetos.jpg" alt="Mutirão de castração em clínica parceira" />
+          <div class="card-body">
+            <h3 class="card-title">Mutirão de Castração</h3>
+            <div class="badges">
+              <span class="badge badge-primary">Saúde</span>
+              <span class="badge">Parcerias</span>
+            </div>
+            <p class="card-meta">Próxima edição: 12/11 • Vagas: 20 voluntários</p>
+            <p>Redução do abandono por meio de castração a baixo custo com clínicas parceiras.</p>
+          </div>
+          <div class="card-actions">
+            <a href="#inscrever" class="btn btn-primary">Quero apoiar</a>
+            <a href="cadastro.html" class="btn btn-outline">Cadastrar projeto</a>
+          </div>
+        </article>
 
-      <article>
-        <h3>Campanha Adoção Responsável</h3>
-        <p>Feiras mensais de adoção com avaliação de tutores, acompanhamento e orientação pós-adoção.</p>
-      </article>
+        <article class="card">
+          <img src="imagens/voluntario.jpg" alt="Equipe em feira de adoção responsável" />
+          <div class="card-body">
+            <h3 class="card-title">Adoção Responsável</h3>
+            <div class="badges">
+              <span class="badge badge-secondary">Adoção</span>
+              <span class="badge">Educação</span>
+            </div>
+            <p class="card-meta">Feira mensal • Acompanhamento pós-adoção</p>
+            <p>Seleção de tutores, orientação e acompanhamento para adoções seguras e conscientes.</p>
+          </div>
+          <div class="card-actions">
+            <a href="#inscrever" class="btn btn-primary">Participar</a>
+            <a href="cadastro.html" class="btn btn-outline">Cadastrar projeto</a>
+          </div>
+        </article>
 
-      <figure>
-        <img src="imagens/projetos.jpg" alt="Voluntários organizando uma ação de doação de ração e cuidados a animais" />
-        <figcaption>Nossas equipes em ação durante campanhas e mutirões.</figcaption>
-      </figure>
+        <article class="card">
+          <img src="imagens/resgatados.jpg" alt="Equipe alimentando animais resgatados" />
+          <div class="card-body">
+            <h3 class="card-title">Rede de Abrigo</h3>
+            <div class="badges">
+              <span class="badge badge-accent">Abrigo</span>
+              <span class="badge">Doações</span>
+            </div>
+            <p class="card-meta">Necessita: ração, medicamentos, lar temporário</p>
+            <p>Cuidado contínuo e alimentação para cães e gatos em reabilitação e espera por adoção.</p>
+          </div>
+          <div class="card-actions">
+            <a href="#doar" class="btn btn-secondary">Doar</a>
+            <a href="cadastro.html" class="btn btn-outline">Cadastrar projeto</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section aria-labelledby="titulo-apoiar">
+    <section class="container section" id="como-apoiar" aria-labelledby="titulo-apoiar">
       <h2 id="titulo-apoiar">Como apoiar</h2>
       <p>Você pode ajudar a Reabilite-se de várias maneiras. Veja algumas formas de contribuir:</p>
       <ul>
-        <li>
-          <strong>Adoção Voluntária (lar temporário):</strong>
-          Ofereça um lar temporário a um animal resgatado enquanto aguarda adoção definitiva.
-        </li>
-        <li>
-          <strong>Auxílio Adoção:</strong>
-          Ajude a divulgar nossos animais e ações em suas redes para ampliar o alcance.
-        </li>
-        <li>
-          <strong>Auxílio Saúde:</strong>
-          Se você é veterinário(a) ou tem experiência em cuidados, contribua com atendimentos básicos.
-        </li>
-        <li>
-          <strong>Auxílio Marketing:</strong>
-          Habilidades em design, foto/vídeo e redes sociais são muito bem-vindas para fortalecer nossa presença.
-        </li>
-        <li>
-          <strong>Doações Financeiras:</strong>
-          Contribuições ajudam a cobrir alimentação, medicamentos, castrações e abrigo.
-        </li>
+        <li><strong>Adoção Voluntária (lar temporário):</strong> Ofereça um lar temporário a um animal resgatado enquanto aguarda adoção definitiva.</li>
+        <li><strong>Auxílio Adoção:</strong> Ajude a divulgar nossos animais e ações em suas redes para ampliar o alcance.</li>
+        <li><strong>Auxílio Saúde:</strong> Se você é veterinário(a) ou tem experiência em cuidados, contribua com atendimentos básicos.</li>
+        <li><strong>Auxílio Marketing:</strong> Habilidades em design, foto/vídeo e redes sociais fortalecem nossa presença.</li>
+        <li><strong>Doações Financeiras:</strong> Contribuições cobrem alimentação, medicamentos, castrações e abrigo.</li>
       </ul>
+      <div class="mt-16">
+        <a class="btn btn-primary" href="#como-doar">Quero doar</a>
+        <a class="btn btn-outline" href="cadastro.html">Quero cadastrar um projeto</a>
+      </div>
     </section>
 
-    <section aria-labelledby="titulo-doar">
+    <section class="container section" id="como-doar" aria-labelledby="titulo-doar">
       <h2 id="titulo-doar">Como doar</h2>
       <p>Escolha o método que for mais conveniente:</p>
       <ul>
@@ -76,7 +131,7 @@
       <p>Após doar, se desejar receber um comprovante por e-mail, entre em contato em <a href="mailto:contato@reabilite-se.org.br">contato@reabilite-se.org.br</a>.</p>
     </section>
 
-    <section aria-labelledby="titulo-depoimentos">
+    <section class="container section" aria-labelledby="titulo-depoimentos">
       <h2 id="titulo-depoimentos">Depoimentos</h2>
       <blockquote cite="#">
         “Adotar com a Reabilite-se foi uma experiência incrível. Fui orientada em cada etapa e hoje a Luna faz parte da família.”
@@ -86,8 +141,36 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
-    <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" />
+    <div class="container">
+      <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
+      <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" />
+    </div>
   </footer>
+
+  <!-- Script para menu mobile e dropdown -->
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('#primary-nav');
+    const dropdownTriggers = document.querySelectorAll('.has-dropdown > a');
+
+    toggle?.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('is-open');
+    });
+
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', e => {
+        const parent = trigger.parentElement;
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (isMobile) {
+          e.preventDefault();
+          const expanded = trigger.getAttribute('aria-expanded') === 'true';
+          trigger.setAttribute('aria-expanded', String(!expanded));
+          parent.classList.toggle('open');
+        }
+      });
+    });
+  </script>
 </body>
 </html>

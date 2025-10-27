@@ -1,0 +1,23 @@
+/* Estilos específicos das páginas e ajustes finais */
+
+/* Seções principais */
+main > section {
+  padding: var(--space-32) 0;
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+main > section:last-child { border-bottom: none; }
+
+/* Página Inicial: destaques */
+.hero {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-secondary-600));
+  color: var(--color-white);
+  padding: var(--space-48) 0;
+  text-align: center;
+  border-radius: 0 0 var(--radius-12) var(--radius-12);
+}
+
+/* Projetos: cards de exemplo */
+.projects-list .section-title { margin-bottom: var(--space-24); }
+
+/* Footer logo menor */
+footer img { width: 56px; margin: 8px auto 0; opacity: .9; }
