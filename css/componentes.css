@@ -44,6 +44,13 @@
 @media (max-width: 1024px) { .card { grid-column: span 6; } } /* 2 por linha */
 @media (max-width: 640px)  { .card { grid-column: span 12; } } /* 1 por linha */
 
+/* Espaçamento vertical entre botões dentro dos cards */
+.card-actions {
+  display: flex;
+  flex-direction: column; /* empilha os botões */
+  gap: 16px;               /* espaço entre eles  */
+}
+
 /* Formulários */
 form {
   display: grid; gap: var(--space-16);
@@ -103,3 +110,35 @@ input:valid, select:valid, textarea:valid { border-color: var(--color-success); 
 .badge-primary { background: #e8f5e9; color: var(--color-primary-600); }
 .badge-secondary { background: #e1f5fe; color: var(--color-secondary-600); }
 .badge-accent { background: #fff8e1; color: var(--color-accent-600); }
+
+.icon-emoji {
+  display: inline-block;
+  margin-right: 8px;   /* controla o espaço */
+  line-height: 1;      /* evita desalinhamento vertical */
+}
+
+/* Garante layout flex dos botões e espaço entre ícone e texto */
+.btn {
+  display: inline-flex !important;   /* força flex caso algo esteja sobrescrevendo */
+  align-items: center;
+  gap: 8px;                          /* espaço entre filhos (ícone <span> e texto) */
+}
+
+/* Fallback caso o gap não seja aplicado pelo navegador */
+.btn .icon-emoji {
+  margin-right: 8px;                 /* garante o espaço mesmo sem gap */
+}
+
+/* Garante flex nos botões e cria espaço entre ícone e texto */
+.card-actions a.btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px; /* espaço entre o <span> e o texto */
+}
+
+/* Fallback adicional: mesmo se o gap falhar, o span empurra o texto */
+.card-actions a.btn .icon-emoji {
+  display: inline-block;
+  margin-right: 8px;
+  line-height: 1;
+}
