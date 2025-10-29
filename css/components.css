@@ -142,3 +142,23 @@ input:valid, select:valid, textarea:valid { border-color: var(--color-success); 
   margin-right: 8px;
   line-height: 1;
 }
+
+/* Alinha checkbox e texto na mesma linha */
+.form-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+/* Evita que o label quebre para baixo do checkbox sem necessidade */
+.form-control label {
+  display: inline-block;   /* não usar block aqui */
+  margin: 0;               /* zera margem herdada */
+}
+
+/* Não deixar inputs ocupar 100% quando forem checkbox/radio */
+input[type="checkbox"],
+input[type="radio"] {
+  width: auto;             /* impede width: 100% herdado */
+}

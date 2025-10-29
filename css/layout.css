@@ -18,6 +18,7 @@
 .brand-text { display: grid; }
 .brand-title { font-weight: 700; line-height: 1; }
 .brand-subtitle { font-size: var(--fs-300); color: var(--color-neutral-600); }
+.brand { gap: var(--space-16); } 
 
 .nav .menu {
   display: flex; align-items: center; gap: var(--space-16);
@@ -100,4 +101,8 @@ footer {
 
 @media (max-width: 360px) { /* xxs */
   .menu-item > a { padding: 6px 8px; }
+}
+
+@media (min-width: 1280px)  { /* xl */
+  .container { width: min(100% - 48px, var(--container-max)); } 
 }
