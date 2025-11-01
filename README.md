@@ -14,7 +14,7 @@ Aplicação web SPA (Single Page Application) leve e acessível para a ONG Reabi
 - [Versionamento (Git/GitHub)](#versionamento-gitgithub)
 - [Licença](#licença)
 
----
+-----------------------------------------------------------------------------------------------------------------------------------
 
 ## Visão geral
 A aplicação apresenta:
@@ -24,6 +24,8 @@ A aplicação apresenta:
 - Design responsivo, sem dependência de frameworks.
 
 Tecnologias: HTML5, CSS3, JavaScript (ES Modules).
+
+* * * 
 
 ## Arquitetura e funcionalidades
 - Roteador hash: `js/core/router.js`
@@ -35,6 +37,8 @@ Tecnologias: HTML5, CSS3, JavaScript (ES Modules).
   - Projetos: `js/pages/projetos.js` (scroll suave para seções via querystring)
   - Cadastro de projeto: `js/pages/cadastro.js`
   - Inscrever-se (usuário): `js/pages/inscrever.js` (máscaras: CPF/CEP/telefone; validação de senha)
+
+* * * 
 
 ## Estrutura de pastas
 
@@ -66,12 +70,11 @@ Tecnologias: HTML5, CSS3, JavaScript (ES Modules).
 ├─ inscrever.html
 └─ .gitignore
 
-
-Observação: os HTMLs de páginas existem por conveniência em desenvolvimento. Em produção, basta o `index.html`; a SPA injeta as views conforme a rota.
-
 ## Como executar
 - Abrir diretamente o `index.html` no navegador (funciona por ser hash routing).
 - Opcional: usar um servidor estático (Live Server, `npx http-server`, `npx serve` etc.) para melhor experiência de recarregamento.
+
+* * * 
 
 ## Acessibilidade (WCAG 2.1 AA)
 - Skip link “Pular para o conteúdo” apontando para `#app`.
@@ -81,6 +84,8 @@ Observação: os HTMLs de páginas existem por conveniência em desenvolvimento.
 - Imagens com `alt` descritivo.
 - Contraste de cores ajustado para AA no tema claro.
 - Observação: Alto contraste não é “tema escuro”; é uma preferência do usuário, acionada pelo botão. O tema padrão é claro.
+
+* * * 
 
 ## Qualidade de código
 - Módulos ES6, separação por responsabilidade (core vs. pages).
