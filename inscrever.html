@@ -95,7 +95,7 @@
               <input type="date" id="nascimento" name="nascimento" required />
             </div>
 
-            <div class=""form-group>  
+            <div class="form-group">  
 
               <label for="endereco">Endereço *</label>
               <input type="text" id="endereco" name="endereco" required autocomplete="street-address" />
@@ -352,7 +352,22 @@
     confirmar?.addEventListener('input', senhasConferem);
 
     // Inicializa estado do bloco de iniciativas e "Outro"
-    atualizarIniciativas();
+    if (perfil) atualizarIniciativas();
+
+    // Intercepta submit para não fazer POST (evita 405)
+      form?.addEventListener('submit', (e) => {
+        e.preventDefault(); // não envia para o servidor
+        // Aqui você pode validar e salvar no localStorage se quiser
+        alert('Cadastro enviado com sucesso! (simulação)');
+        form.reset();
+        // Reaplique estado inicial dos blocos condicionais:
+        if (perfil) {
+          perfil.value = '';
+          atualizarIniciativas();
+        }
+      });
+
+    
   </script>
 </body>
 </html>

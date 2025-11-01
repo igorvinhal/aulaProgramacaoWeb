@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página Inicial – Reabilite-se</title>
-  <meta name="description" content="ONG Reabilite-se: resgate, reabilitação e adoção de cães e gatos. Conheça nossa missão, visão, valores e como entrar em contato." />
+  <title>Reabilite-se</title>
+  <meta name="description" content="ONG Reabilite-se: resgate, reabilitação e adoção de cães e gatos. Conheça nossa missão, visão, valores e como ajudar." />
 
-  <!-- CSS do Design System -->
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/layout.css" />
@@ -17,7 +16,7 @@
 <body>
   <header class="site-header">
     <div class="container header-bar">
-      <a href="index.html" class="brand">
+      <a href="#/home" class="brand">
         <img src="imagens/marca.png" alt="Logomarca da Reabilite-se" class="logo" />
         <div class="brand-text">
           <span class="brand-title">Reabilite-se</span>
@@ -31,123 +30,34 @@
 
       <nav id="primary-nav" class="nav">
         <ul class="menu">
-          <li class="menu-item"><a href="index.html" aria-current="page">Página Inicial</a></li>
+          <li class="menu-item"><a href="#/home">Página Inicial</a></li>
           <li class="menu-item has-dropdown">
-            <a href="projetos.html" aria-haspopup="true" aria-expanded="false">Projetos</a>
+            <a href="#/projetos" aria-haspopup="true" aria-expanded="false">Projetos</a>
             <ul class="dropdown" aria-label="submenu">
-              <li><a href="projetos.html#andamento">Em andamento</a></li>
-              <li><a href="projetos.html#como-apoiar">Como apoiar</a></li>
-              <li><a href="projetos.html#como-doar">Como doar</a></li>
+              <li><a href="#/projetos?section=andamento">📝 Em andamento</a></li>
+              <li><a href="#/projetos?section=como-apoiar">🤝 Como apoiar</a></li>
+              <li><a href="#/projetos?section=como-doar">💝 Como doar</a></li>
+              <li><a href="#/projetos?section=depoimentos">💬 Depoimentos</a></li>
             </ul>
           </li>
-          <li class="menu-item"><a href="cadastro.html">Cadastre seu projeto</a></li>
-          <li class="menu-item"><a href="inscrever.html">Inscrever-se</a></li>
+          <li class="menu-item"><a href="#/cadastro">Cadastre seu projeto</a></li>
+          <li class="menu-item"><a href="#/inscrever">Inscrever-se</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main class="main-content">
-    <!-- Hero opcional (destaque visual) -->
-    <section class="hero">
-      <div class="container">
-        <h1>Reabilite-se</h1>
-        <p class="mb-16">Resgate, reabilitação e adoção responsável de cães e gatos.</p>
-        <div class="badges">
-          <span class="badge badge-primary">Proteção Animal</span>
-          <span class="badge badge-secondary">Adoção</span>
-          <span class="badge badge-accent">Voluntariado</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="container section" aria-labelledby="titulo-quem-somos">
-      <h2 id="titulo-quem-somos">Quem somos</h2>
-      <p>Somos a Reabilite-se, uma organização não governamental dedicada a ajudar animais abandonados, oferecendo abrigo, cuidados médicos e buscando lares amorosos para eles.</p>
-      <figure>
-        <img src="imagens/voluntario.jpg" alt="Grupo de voluntários da ONG em ação durante um mutirão" />
-        <figcaption>Voluntários em ação nos mutirões de cuidado animal.</figcaption>
-      </figure>
-      <div class="mt-16">
-        <a class="btn btn-primary" href="projetos.html">Conheça nossos projetos</a>
-        <a class="btn btn-outline" href="cadastro.html">Cadastre seu projeto</a>
-        <a class="btn btn-secondary" href="inscrever.html">Inscrever-se</a>
-      </div>
-    </section>
-
-    <section class="container section" aria-labelledby="titulo-missao">
-      <h2 id="titulo-missao">Nossa Missão</h2>
-      <p>Resgatar e reabilitar cães e gatos abandonados na cidade, promovendo campanhas de adoção e conscientização sobre a importância do cuidado animal.</p>
-      <figure>
-        <img src="imagens/resgatados.jpg" alt="Animais resgatados recebendo cuidados" />
-        <figcaption>Animais resgatados e em reabilitação.</figcaption>
-      </figure>
-    </section>
-
-    <section class="container section" aria-labelledby="titulo-visao">
-      <h2 id="titulo-visao">Visão</h2>
-      <p>Ser referência nacional em proteção animal, expandindo nossas ações para alcançar mais animais necessitados e educar a comunidade sobre o respeito aos direitos dos animais.</p>
-    </section>
-
-    <section class="container section" aria-labelledby="titulo-valores">
-      <h2 id="titulo-valores">Nossos Valores</h2>
-      <ul>
-        <li>Compromisso com o bem-estar animal</li>
-        <li>Transparência em nossas ações</li>
-        <li>Respeito e amor pelos animais</li>
-        <li>Trabalho voluntário e comunitário</li>
-      </ul>
-      <figure>
-        <img src="imagens/adocao.jpg" alt="Adoção responsável de um cão por uma família" />
-        <figcaption>Respeito, amor e adoção responsável.</figcaption>
-      </figure>
-    </section>
-
-    <section class="container section" aria-labelledby="titulo-contato">
-      <h2 id="titulo-contato">Contato com a ONG</h2>
-      <address>
-        <p>Endereço: Rua dos Animais, 456 – Bairro Esperança, Brasília – DF</p>
-        <p>Telefone: <a href="tel:+5561998764321">(61) 99876-4321</a></p>
-        <p>E-mail: <a href="mailto:contato@reabilite-se.org.br">contato@reabilite-se.org.br</a></p>
-      </address>
-      <figure>
-        <img src="imagens/contato.jpg" alt="Equipe da ONG atendendo ao público" />
-        <figcaption>Fale com nossa equipe para adotar ou apoiar.</figcaption>
-      </figure>
-    </section>
+    <div id="app"></div>
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Reabilite-se - ONG de Proteção Animal. CNPJ: 12.345.678/0001-90.</p>
       <img src="imagens/logo.png" alt="Logomarca da Reabilite-se" />
     </div>
   </footer>
 
-  <!-- Script para menu mobile e dropdown -->
-  <script>
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.querySelector('#primary-nav');
-    const dropdownTriggers = document.querySelectorAll('.has-dropdown > a');
-
-    toggle?.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!expanded));
-      nav.classList.toggle('is-open');
-    });
-
-    dropdownTriggers.forEach(trigger => {
-      trigger.addEventListener('click', e => {
-        const parent = trigger.parentElement;
-        const isMobile = window.matchMedia('(max-width: 768px)').matches;
-        if (isMobile) {
-          e.preventDefault();
-          const expanded = trigger.getAttribute('aria-expanded') === 'true';
-          trigger.setAttribute('aria-expanded', String(!expanded));
-          parent.classList.toggle('open');
-        }
-      });
-    });
-  </script>
+  <script type="module" src="js/app.js"></script>
 </body>
 </html>

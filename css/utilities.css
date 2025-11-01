@@ -12,6 +12,7 @@
 .text-muted { color: var(--color-neutral-600); }
 
 .grid { display: grid; gap: var(--space-16); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-16); }
 .grid-12 { grid-template-columns: repeat(12, 1fr); }
 .span-12 { grid-column: span 12; }
 .span-8  { grid-column: span 8; }
@@ -19,9 +20,6 @@
 .span-4  { grid-column: span 4; }
 .span-3  { grid-column: span 3; }
 
-@media (max-width: 1024px) {
-  .span-8 { grid-column: span 12; }
-}
-@media (max-width: 640px) {
-  .span-6, .span-4, .span-3 { grid-column: span 12; }
-}
+@media (max-width: 1024px) { .span-8 { grid-column: span 12; } }
+@media (max-width: 640px) { .span-6, .span-4, .span-3 { grid-column: span 12; } }
+@media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }

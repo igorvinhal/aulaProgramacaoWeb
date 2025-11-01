@@ -162,3 +162,71 @@ input[type="checkbox"],
 input[type="radio"] {
   width: auto;             /* impede width: 100% herdado */
 }
+/* feedback de erro complementando :invalid/:valid já existentes */
+input.is-error, select.is-error, textarea.is-error {
+  border-color: var(--color-danger) !important;
+}
+.field-error {
+  color: var(--color-danger);
+  display: block;
+  margin-top: 4px;
+  font-size: var(--fs-300);
+}
+/* ========== Dropdown Menu (Header) ========== */
+.menu .has-dropdown {
+  position: relative;
+}
+
+/* Lista suspensa */
+.menu .has-dropdown > .dropdown {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 220px;
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  box-shadow: var(--shadow-2);
+  padding: 8px 0;
+  display: none;
+  z-index: 1000;
+  border-radius: var(--radius-8);
+}
+
+/* Itens do dropdown */
+.menu .has-dropdown > .dropdown li a {
+  display: block;
+  padding: 10px 14px;
+  color: var(--color-neutral-900);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.menu .has-dropdown > .dropdown li a:hover {
+  background: var(--color-neutral-100);
+}
+
+/* Abrir no desktop ao hover/focus */
+@media (hover: hover) and (pointer: fine) {
+  .menu .has-dropdown:hover > .dropdown,
+  .menu .has-dropdown:focus-within > .dropdown {
+    display: block;
+  }
+}
+
+/* Estado "open" (mobile) controlado via JS */
+.menu .has-dropdown.open > .dropdown {
+  display: block;
+}
+
+/* Mobile: dropdown vira bloco no fluxo do menu */
+@media (max-width: 768px) {
+  .menu .has-dropdown {
+    position: static;
+  }
+  .menu .has-dropdown > .dropdown {
+    position: static;
+    border: 0;
+    box-shadow: none;
+    padding-left: 16px;
+    margin-top: 4px;
+  }
+}
